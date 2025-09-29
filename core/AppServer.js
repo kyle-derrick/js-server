@@ -1,7 +1,7 @@
-const yml = require('yamljs');
+const yml = require('js-yaml');
 const fs = require('fs');
 const express = require('express');
-const expressWs = require('express-ws');
+// const expressWs = require('express-ws');
 const {APP_CONTENT, DEFAULT_CONFIG_PATH} = require('./constant/ConstVar.js');
 const AppConfig = require('./model/AppConfig.js');
 const requestMapping = require("./controller/requestMapping.js");
@@ -44,7 +44,7 @@ class AppServer {
 
     start() {
         const app = express();
-        expressWs(app);
+        // expressWs(app);
         app.use(express.json())
         this.app = app;
         this.setRequestMapping();
